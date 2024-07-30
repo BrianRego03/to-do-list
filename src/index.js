@@ -5,6 +5,8 @@ import { compareAsc } from "date-fns";
 import { isTomorrow } from "date-fns";
 import { isToday } from "date-fns";
 
+import {taskSort} from './taskSorter.js'
+
 
 const taskLibrary = [];
 
@@ -30,7 +32,12 @@ const task1=new Task('HIIT workout',2,new Date(2025, 1, 1),'gym','Madfit workout
 
 const task2=new Task('Linear Algebra',3,new Date(2024, 6, 31),'study','Test tomorrow');
 
+const task3=new Task('Algebra',3,new Date(2025, 1, 1),'study','Test tomorrow');
+
 task1.addTaskToLibrary();
 task2.addTaskToLibrary();
+task3.addTaskToLibrary();
 
+
+taskSort(taskLibrary);
 console.log(taskLibrary);
