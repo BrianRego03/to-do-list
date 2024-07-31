@@ -17,7 +17,7 @@ import { clearScreen } from './clearWindow.js';
 
 const taskLibrary = [];
 
-const pageStatus="Home";
+let pageStatus="Home";
 
 class Task{
     constructor(title,priority,dueDate,project,description,index){
@@ -57,7 +57,7 @@ const homeBtn=document.querySelector("#Home");
 homeBtn.addEventListener('click',()=>{
     pageStatus='Home';
     clearScreen();
-    displayArray(taskGenerate(taskLibrary,pageStatus));
+    displayArray(taskLibrary);
 });
 
 const todayBtn=document.querySelector("#Today");
