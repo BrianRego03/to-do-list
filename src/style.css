@@ -104,6 +104,19 @@
     box-shadow: 2px 1px 1px #e37682; ;
   }
 
+  #projectInput{
+    width: 150px;
+  } 
+
+  #projInput{
+    width: 100%;
+    font-size: 24px;
+  }
+  #projInpBtn{
+    width: 95%;
+    height:50px
+  }
+
   .todoSection{width: 80%;
   background-color: rgba(0,0,0,0);}
 
