@@ -55,30 +55,35 @@ indexAssign(taskLibrary);
 displayArray(taskLibrary);
 console.log(taskLibrary);
 
+let todoSec=document.querySelector(".todoSection");
+
 const homeBtn=document.querySelector("#Home");
 homeBtn.addEventListener('click',()=>{
     pageStatus='Home';
-    clearScreen();
+    clearScreen(todoSec);
     displayArray(taskLibrary);
 });
 
 const todayBtn=document.querySelector("#Today");
 todayBtn.addEventListener('click',()=>{
     pageStatus='Today';
-    clearScreen();
+    clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
 });
 
 const tomorrowBtn=document.querySelector("#Tomorrow");
 tomorrowBtn.addEventListener('click',()=>{
     pageStatus='Tomorrow';
-    clearScreen();
+    clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
 })
 
+
+let projectButtonSection=document.querySelector("#buttonSection2");
 const addProjectBtn=document.querySelector("#AddProject");
 addProjectBtn.addEventListener('click',()=>{
-    let projectButtonSection=document.querySelector("#buttonSection2");
+    clearScreen(projectButtonSection);
+    
     
 
     
@@ -88,7 +93,7 @@ const projectBtn=document.querySelectorAll("#projectButton");
 for(let currentProject of projectBtn){
     currentProject.addEventListener('click',()=>{
         pageStatus=currentProject.innerHTML;
-        clearScreen();
+        clearScreen(todoSec);
         displayArray(taskGenerate(taskLibrary,pageStatus));               
     });
 }

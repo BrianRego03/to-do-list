@@ -1,8 +1,8 @@
-const clearScreen=()=>{
+const clearScreen=(inputNode)=>{
 
-    let todoSec=document.querySelector(".todoSection");
-    while (todoSec.hasChildNodes()) {
-        todoSec.removeChild(todoSec.firstChild);
+    
+    while (inputNode.hasChildNodes()) {
+      inputNode.removeChild(inputNode.firstChild);
       }
 
 }
