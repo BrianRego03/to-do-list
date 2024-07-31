@@ -9,8 +9,13 @@ import {taskSort,indexAssign} from './taskSorter.js'
 
 import {displayArray} from './displayArray.js'
 
+import { taskGenerate } from './taskGenerator.js';
+
+
 
 const taskLibrary = [];
+
+const pageStatus="Home";
 
 class Task{
     constructor(title,priority,dueDate,project,description,index){
@@ -45,3 +50,21 @@ taskSort(taskLibrary);
 indexAssign(taskLibrary);
 displayArray(taskLibrary);
 console.log(taskLibrary);
+
+const homeBtn=document.querySelector("#Home");
+homeBtn.addEventListener('click',()=>{
+    pageStatus='Home';
+    displayArray(taskGenerate(taskLibrary,pageStatus));
+});
+
+const todayBtn=document.querySelector("#Today");
+todayBtn.addEventListener('click',()=>{
+    pageStatus='Today';
+    displayArray(taskGenerate(taskLibrary,pageStatus));
+});
+
+const tomorrowBtn=document.querySelector("#Tomorrow");
+tomorrowBtn.addEventListener('click',()=>{
+    pageStatus='Tomorrow';
+    displayArray(taskGenerate(taskLibrary,pageStatus));
+})
