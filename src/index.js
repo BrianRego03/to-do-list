@@ -1,9 +1,7 @@
 import './style.css';
 
 import { format } from "date-fns";
-import { compareAsc } from "date-fns";
-import { isTomorrow } from "date-fns";
-import { isToday } from "date-fns";
+
 
 import {taskSort,indexAssign} from './taskSorter.js'
 
@@ -55,7 +53,7 @@ task3.addTaskToLibrary();
 taskSort(taskLibrary);
 indexAssign(taskLibrary);
 displayArray(taskLibrary);
-console.log(taskLibrary);
+
 
 let todoSec=document.querySelector(".todoSection");
 
@@ -92,7 +90,7 @@ const addActivate=(arr,lib)=>{
     const addProjectBtn=document.querySelector("#AddProject");
     addProjectBtn.addEventListener('click',()=>{
     projectAddition(arr,lib);    
-    console.log("testing"); 
+    
     
    
 

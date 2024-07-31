@@ -39,9 +39,9 @@ const projectAddition=(arr,lib)=>{
         }
         else {
             arr[arr.length]=projectInput.value;
-            // clearScreen(projectButtonSection)
+           
             projectDisplay(arr,lib);
-            console.log("testing3");
+            
             attachAddButton();
             addActivate(arr,lib);
                     
@@ -63,8 +63,7 @@ const projectAddition=(arr,lib)=>{
 
 const projectDisplay=(arr,lib)=>{
     let projectButtonSection=document.querySelector("#buttonSection2");
-    // 
-
+    
     
     clearScreen(projectButtonSection);
     for(let i=0;i<arr.length;i++){
@@ -87,12 +86,11 @@ function projectActivate(lib){
         currentProject.addEventListener('click',()=>{
             
             clearScreen(todoSec);
-            console.log(lib);
-            console.log(currentProject.innerHTML);
+            
             displayArray(taskGenerate(lib,currentProject.innerHTML));               
         });
     }
-    console.log("testing2")
+    
 }
 
 
