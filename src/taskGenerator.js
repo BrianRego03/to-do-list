@@ -10,6 +10,14 @@ const taskGenerate=(arr,status)=>{
     else if(status=='Tomorrow'){
         return arr.filter((task)=>isTomorrow(task.dueDate));
     }
+    else {
+        return arr.filter((task)=>{
+            if(task.project==status)
+                return 1;
+            else return 0;
+        });
+
+    }
     
 
 }

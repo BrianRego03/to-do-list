@@ -19,6 +19,8 @@ const taskLibrary = [];
 
 let pageStatus="Home";
 
+let projectArray=['gym',"study"];
+
 class Task{
     constructor(title,priority,dueDate,project,description,index){
         this.title=title;
@@ -73,3 +75,20 @@ tomorrowBtn.addEventListener('click',()=>{
     clearScreen();
     displayArray(taskGenerate(taskLibrary,pageStatus));
 })
+
+const addProjectBtn=document.querySelector("#AddProject");
+addProjectBtn.addEventListener('click',()=>{
+    let projectButtonSection=document.querySelector("#buttonSection2");
+    
+
+    
+})
+
+const projectBtn=document.querySelectorAll("#projectButton");
+for(let currentProject of projectBtn){
+    currentProject.addEventListener('click',()=>{
+        pageStatus=currentProject.innerHTML;
+        clearScreen();
+        displayArray(taskGenerate(taskLibrary,pageStatus));               
+    });
+}
