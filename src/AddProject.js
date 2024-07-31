@@ -6,7 +6,7 @@ import { taskGenerate } from "./taskGenerator";
 
 import { addActivate } from ".";
 
-import { addTaskButton } from "./addTaskButton";
+import { addTaskButton,addButtonActivate } from "./addTaskButton";
 
 
 const projectAddition=(arr,lib)=>{
@@ -77,11 +77,11 @@ const projectDisplay=(arr,lib)=>{
 
 
     }
-    projectActivate(lib);
+    projectActivate(arr,lib);
 
 }
 
-function projectActivate(lib){
+function projectActivate(arr,lib){
     const projectBtn=document.querySelectorAll(".projectButton");
     let todoSec=document.querySelector(".todoSection");
     for(let currentProject of projectBtn){
@@ -90,7 +90,8 @@ function projectActivate(lib){
             clearScreen(todoSec);
             
             displayArray(taskGenerate(lib,currentProject.innerHTML));
-            addTaskButton();               
+            addTaskButton(); 
+            addButtonActivate(arr,lib);              
         });
     }
     

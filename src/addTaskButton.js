@@ -1,3 +1,5 @@
+import { createForm } from "./createTaskForm";
+
 const addTaskButton=()=>{    
     let todoSec=document.querySelector(".todoSection");
     const addTaskDiv=document.createElement("div");
@@ -7,6 +9,15 @@ const addTaskButton=()=>{
     addTask.innerText="Add new Task";
     todoSec.appendChild(addTaskDiv);
     addTaskDiv.appendChild(addTask);
+
+    
+}
+
+const addButtonActivate=(arr,lib)=>{
+    let buttonadd=document.querySelector("#addTaskButton");
+    buttonadd.addEventListener('click',()=>{
+    createForm(arr,lib);          
+        });
 }
 
 const removeTaskButton=()=>{
@@ -15,4 +26,4 @@ const removeTaskButton=()=>{
     todoSec.removeChild(taskDiv);
 }
 
-export{addTaskButton,removeTaskButton}
+export{addTaskButton,removeTaskButton,addButtonActivate}

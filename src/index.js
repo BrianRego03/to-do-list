@@ -13,7 +13,7 @@ import { clearScreen } from './clearWindow.js';
 
 import { projectAddition,projectDisplay } from './AddProject.js';
 
-import { addTaskButton,removeTaskButton } from './addTaskButton.js';
+import { addTaskButton,removeTaskButton,addButtonActivate } from './addTaskButton.js';
 
 import { createForm,removeForm } from './createTaskForm.js';
 
@@ -58,7 +58,8 @@ taskSort(taskLibrary);
 indexAssign(taskLibrary);
 displayArray(taskLibrary);
 addTaskButton();
-createForm(projectArray,taskLibrary);
+addButtonActivate(projectArray,taskLibrary);
+
 
 
 let todoSec=document.querySelector(".todoSection");
@@ -69,6 +70,7 @@ homeBtn.addEventListener('click',()=>{
     clearScreen(todoSec);
     displayArray(taskLibrary);
     addTaskButton();
+    addButtonActivate(projectArray,taskLibrary);
 });
 
 const todayBtn=document.querySelector("#Today");
@@ -77,6 +79,7 @@ todayBtn.addEventListener('click',()=>{
     clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
     addTaskButton();
+    addButtonActivate(projectArray,taskLibrary);
 });
 
 const tomorrowBtn=document.querySelector("#Tomorrow");
@@ -85,6 +88,7 @@ tomorrowBtn.addEventListener('click',()=>{
     clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
     addTaskButton();
+    addButtonActivate(projectArray,taskLibrary);
 })
 
 
@@ -108,3 +112,8 @@ const addActivate=(arr,lib)=>{
 addActivate(projectArray,taskLibrary);
 
 export {addActivate}
+
+
+
+
+

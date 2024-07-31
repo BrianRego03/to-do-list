@@ -1,7 +1,7 @@
-import { addTaskButton,removeTaskButton } from "./addTaskButton"
+import { addTaskButton,removeTaskButton,addButtonActivate } from "./addTaskButton"
 
 const createForm=(arr,lib)=>{
-    removeTaskButton();
+    removeTaskButton(arr,lib);
     let todoSec=document.querySelector(".todoSection");
     let formDiv=document.createElement("div");
     todoSec.appendChild(formDiv);
@@ -86,13 +86,20 @@ const createForm=(arr,lib)=>{
     cancelButton.innerText="Cancel";
     actualForm.appendChild(cancelButton);
 
+    
+    cancelButton.addEventListener('click',()=>{
+    removeForm(arr,lib);
+    
+    });
+
 }
 
-const removeForm=()=>{
+const removeForm=(arr,lib)=>{
     let todoSec=document.querySelector(".todoSection");
     let formDiv=document.querySelector("#formDivision");
     todoSec.removeChild(formDiv);
     addTaskButton();
+    addButtonActivate(arr,lib)
 
 }
 
