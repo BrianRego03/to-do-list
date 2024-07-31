@@ -176,4 +176,9 @@
     background: rgb(185, 255, 185);
   }
 
+  #addTaskDiv{
+    display: flex;
+    justify-content: center;
+  }
+
   

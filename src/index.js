@@ -13,6 +13,8 @@ import { clearScreen } from './clearWindow.js';
 
 import { projectAddition,projectDisplay } from './AddProject.js';
 
+import { addTaskButton,removeTaskButton } from './addTaskButton.js';
+
 
 
 const taskLibrary = [];
@@ -53,6 +55,7 @@ task3.addTaskToLibrary();
 taskSort(taskLibrary);
 indexAssign(taskLibrary);
 displayArray(taskLibrary);
+addTaskButton();
 
 
 let todoSec=document.querySelector(".todoSection");
@@ -62,6 +65,7 @@ homeBtn.addEventListener('click',()=>{
     pageStatus='Home';
     clearScreen(todoSec);
     displayArray(taskLibrary);
+    addTaskButton();
 });
 
 const todayBtn=document.querySelector("#Today");
@@ -69,6 +73,7 @@ todayBtn.addEventListener('click',()=>{
     pageStatus='Today';
     clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
+    addTaskButton();
 });
 
 const tomorrowBtn=document.querySelector("#Tomorrow");
@@ -76,6 +81,7 @@ tomorrowBtn.addEventListener('click',()=>{
     pageStatus='Tomorrow';
     clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
+    addTaskButton();
 })
 
 

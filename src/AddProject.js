@@ -6,6 +6,8 @@ import { taskGenerate } from "./taskGenerator";
 
 import { addActivate } from ".";
 
+import { addTaskButton } from "./addTaskButton";
+
 
 const projectAddition=(arr,lib)=>{
     const addProjectBtn=document.querySelector("#AddProject");
@@ -87,7 +89,8 @@ function projectActivate(lib){
             
             clearScreen(todoSec);
             
-            displayArray(taskGenerate(lib,currentProject.innerHTML));               
+            displayArray(taskGenerate(lib,currentProject.innerHTML));
+            addTaskButton();               
         });
     }
     
