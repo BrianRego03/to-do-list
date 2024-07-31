@@ -27,9 +27,17 @@ const taskSort=(arr)=>{
             else continue;
         }
     }
+    
+
+}
+
+const indexAssign=(arr)=>{
+    for (let k=0;k<arr.length;k++){
+        arr[k].index=k;
+    }
 
 }
 
 
 
-export {taskSort};
+export {taskSort,indexAssign};
