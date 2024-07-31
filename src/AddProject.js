@@ -1,7 +1,13 @@
 import { clearScreen } from "./clearWindow";
 
+import { displayArray } from "./displayArray";
 
-const projectAddition=(arr)=>{
+import { taskGenerate } from "./taskGenerator";
+
+import { addActivate } from ".";
+
+
+const projectAddition=(arr,lib)=>{
     const addProjectBtn=document.querySelector("#AddProject");
 
     const addButtonSection=document.querySelector("#projectInput");
@@ -22,22 +28,28 @@ const projectAddition=(arr)=>{
     addButtonSection.appendChild(projectInput);
     addButtonSection.appendChild(projInputBtn);
 
+    let projectButtonSection=document.querySelector("#buttonSection2");
+
     projInputBtn.addEventListener('click',()=>{
         if(projectInput.value==''){
-            return;
+            return ;
         }
-        else if(IsInArray(projectInput.value)){
-            return
+        else if(IsInArray(projectInput.value)){ 
+            return ;
         }
         else {
             arr[arr.length]=projectInput.value;
-            console.log(arr);
-            projectDisplay(arr);
-            
+            // clearScreen(projectButtonSection)
+            projectDisplay(arr,lib);
+            console.log("testing3");
+            attachAddButton();
+            addActivate(arr,lib);
+                    
 
         }
 
     })
+    
 
     const IsInArray=(val)=>{
         for(let j=0;j<arr.length;j++){
@@ -49,21 +61,43 @@ const projectAddition=(arr)=>{
     }
 }
 
-const projectDisplay=(arr)=>{
+const projectDisplay=(arr,lib)=>{
     let projectButtonSection=document.querySelector("#buttonSection2");
-    const addButtonSection=document.querySelector("#projectInput");
+    // 
 
+    
     clearScreen(projectButtonSection);
-
     for(let i=0;i<arr.length;i++){
         let newProjectButton=document.createElement("button");
         newProjectButton.innerText=arr[i];
         newProjectButton.setAttribute("class","projectButton");
-        projectButtonSection.appendChild(newProjectButton);
+        projectButtonSection.appendChild(newProjectButton); 
         
 
 
     }
+    projectActivate(lib);
+
+}
+
+function projectActivate(lib){
+    const projectBtn=document.querySelectorAll(".projectButton");
+    let todoSec=document.querySelector(".todoSection");
+    for(let currentProject of projectBtn){
+        currentProject.addEventListener('click',()=>{
+            
+            clearScreen(todoSec);
+            console.log(lib);
+            console.log(currentProject.innerHTML);
+            displayArray(taskGenerate(lib,currentProject.innerHTML));               
+        });
+    }
+    console.log("testing2")
+}
+
+
+const attachAddButton=()=>{
+    const addButtonSection=document.querySelector("#projectInput");
 
     clearScreen(addButtonSection);
     
@@ -72,10 +106,9 @@ const projectDisplay=(arr)=>{
     addButton.innerText="Add Project";
     addButtonSection.appendChild(addButton);
 
-    addButton.addEventListener('click',()=>{
-        projectAddition(arr); 
-    })
 }
 
-export {projectAddition}; 
+
+
+export {projectAddition,projectDisplay,attachAddButton}; 
 

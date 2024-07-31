@@ -13,7 +13,7 @@ import { taskGenerate } from './taskGenerator.js';
 
 import { clearScreen } from './clearWindow.js';
 
-import { projectAddition } from './AddProject.js';
+import { projectAddition,projectDisplay } from './AddProject.js';
 
 
 
@@ -82,19 +82,22 @@ tomorrowBtn.addEventListener('click',()=>{
 
 
 let projectButtonSection=document.querySelector("#buttonSection2");
-const addProjectBtn=document.querySelector("#AddProject");
-addProjectBtn.addEventListener('click',()=>{
-    projectAddition(projectArray);
+clearScreen(projectButtonSection);
+projectDisplay(projectArray,taskLibrary);
+
+
+
+
+const addActivate=(arr,lib)=>{
+    const addProjectBtn=document.querySelector("#AddProject");
+    addProjectBtn.addEventListener('click',()=>{
+    projectAddition(arr,lib);    
+    console.log("testing"); 
+    
+   
 
 })
+}
+addActivate(projectArray,taskLibrary);
 
-function projectButtonActivator(){
-    const projectBtn=document.querySelectorAll(".projectButton");
-    for(let currentProject of projectBtn){
-        currentProject.addEventListener('click',()=>{
-        pageStatus=currentProject.innerHTML;
-        clearScreen(todoSec);
-        displayArray(taskGenerate(taskLibrary,pageStatus));               
-    });
-}}
-projectButtonActivator();
+export {addActivate}
