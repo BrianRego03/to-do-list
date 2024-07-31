@@ -15,6 +15,8 @@ import { projectAddition,projectDisplay } from './AddProject.js';
 
 import { addTaskButton,removeTaskButton } from './addTaskButton.js';
 
+import { createForm,removeForm } from './createTaskForm.js';
+
 
 
 const taskLibrary = [];
@@ -56,6 +58,7 @@ taskSort(taskLibrary);
 indexAssign(taskLibrary);
 displayArray(taskLibrary);
 addTaskButton();
+createForm(projectArray,taskLibrary);
 
 
 let todoSec=document.querySelector(".todoSection");
