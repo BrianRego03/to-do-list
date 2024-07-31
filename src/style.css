@@ -47,7 +47,8 @@
   body{
     background-image: url(images/overlay.png),
     linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-    background-attachment:fixed;/*repeat new gradient on scrolling down*/   
+    background-attachment:fixed;/*repeat new gradient on scrolling down*/  
+    height: 100%; 
   }
 
   header{    
@@ -61,19 +62,29 @@
     border: 2px solid white;  
   }
 
+  .todoBody{
+    min-height: 100%;
+    display: flex;
+  }
+
   nav{
     max-width: 200px;
     background-color: rgba(55, 61, 73, 0.975);
     color: azure;
     font-size: 40px;
     text-align: center;
+    
+    
   }
   
   .navButtons{
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 0px;
     
+  }
+  #buttonSection2{
+    margin-top: 80px;
   }
 
   nav>div>button{
