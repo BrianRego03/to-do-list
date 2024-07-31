@@ -77,7 +77,14 @@ const createForm=(arr,lib)=>{
     let submission=document.createElement("input");
     submission.setAttribute("type","submit");
     submission.setAttribute("value","Add Task");
+    submission.setAttribute("id","submit");
     actualForm.appendChild(submission);
+
+    let cancelButton=document.createElement("button");
+    cancelButton.setAttribute("type","button");
+    cancelButton.setAttribute("id","cancel");
+    cancelButton.innerText="Cancel";
+    actualForm.appendChild(cancelButton);
 
 }
 

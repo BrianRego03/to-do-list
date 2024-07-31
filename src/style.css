@@ -184,18 +184,29 @@
   form{
     background-color: azure;
     
-    width: 300px;
+    width: 400px;
     min-width: 200px;
     min-height:80px;
+    padding: 30px;
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
   }
   form>input{
     width: 80%;
     word-wrap: normal;
     overflow: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  form>textarea{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  form>button{
+    margin-top: 5px;
   }
 
   #formDivision{
@@ -204,7 +215,7 @@
     /* display: flex;
     justify-content: center; */
     margin: 2%;
-    max-height:600px;
+    max-height:800px;
     margin-left: 10%;
   }
   
