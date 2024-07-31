@@ -7,6 +7,8 @@ import { isToday } from "date-fns";
 
 import {taskSort,indexAssign} from './taskSorter.js'
 
+import {displayArray} from './displayArray.js'
+
 
 const taskLibrary = [];
 
@@ -41,4 +43,5 @@ task3.addTaskToLibrary();
 
 taskSort(taskLibrary);
 indexAssign(taskLibrary);
+displayArray(taskLibrary);
 console.log(taskLibrary);
