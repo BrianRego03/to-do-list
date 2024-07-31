@@ -1,0 +1,5 @@
+const clearScreen=()=>{
+
+}
+
+export {clearScreen};

@@ -11,6 +11,8 @@ import {displayArray} from './displayArray.js'
 
 import { taskGenerate } from './taskGenerator.js';
 
+import { clearScreen } from './clearWindow.js';
+
 
 
 const taskLibrary = [];
@@ -54,17 +56,20 @@ console.log(taskLibrary);
 const homeBtn=document.querySelector("#Home");
 homeBtn.addEventListener('click',()=>{
     pageStatus='Home';
+    clearScreen();
     displayArray(taskGenerate(taskLibrary,pageStatus));
 });
 
 const todayBtn=document.querySelector("#Today");
 todayBtn.addEventListener('click',()=>{
     pageStatus='Today';
+    clearScreen();
     displayArray(taskGenerate(taskLibrary,pageStatus));
 });
 
 const tomorrowBtn=document.querySelector("#Tomorrow");
 tomorrowBtn.addEventListener('click',()=>{
     pageStatus='Tomorrow';
+    clearScreen();
     displayArray(taskGenerate(taskLibrary,pageStatus));
 })
