@@ -166,4 +166,14 @@
 
   }
 
+  .redAlert{
+    background-color: #fe9ca7;
+  }
+  .yellowAlert{
+    background-color: rgb(246, 246, 193);
+  }
+  .greenAlert{
+    background: rgb(185, 255, 185);
+  }
+
   

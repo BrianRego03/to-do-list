@@ -36,6 +36,19 @@ const displayArray=(arr)=>{
         modifyDiv.appendChild(deleteButton);
         deleteButton.setAttribute("id",`deleteButton${arr[i].index}`);
         deleteButton.classList.add("deleteStyling");
+
+        if((arr[i].priority)==3){
+            todoSecChild.classList.add("redAlert");
+
+        }
+        else if((arr[i].priority)==2){
+            todoSecChild.classList.add("yellowAlert");
+
+        }
+        else {
+            todoSecChild.classList.add("greenAlert");
+
+        }
     }
 
 }
