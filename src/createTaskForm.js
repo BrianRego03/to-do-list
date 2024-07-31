@@ -1,4 +1,6 @@
 import { addTaskButton,removeTaskButton,addButtonActivate } from "./addTaskButton"
+import { taskCollector } from ".";
+
 
 const createForm=(arr,lib)=>{
     removeTaskButton(arr,lib);
@@ -92,6 +94,8 @@ const createForm=(arr,lib)=>{
     
     });
 
+    formSubmission(arr,lib);
+
 }
 
 const removeForm=(arr,lib)=>{
@@ -104,3 +108,17 @@ const removeForm=(arr,lib)=>{
 }
 
 export{createForm,removeForm};
+
+
+const formSubmission=(arr,lib)=>{
+    let formSubmit=document.querySelector("form");
+
+
+formSubmit.addEventListener('submit',function(e){
+    e.preventDefault();
+    taskCollector(formSubmit[0].value,formSubmit[1].value,formSubmit[2].value,formSubmit[3].value);
+   
+
+});
+
+}
