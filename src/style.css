@@ -103,4 +103,53 @@
     box-shadow: 2px 1px 1px #e37682; ;
   }
 
+  .todoSection{width: 80%;
+  background-color: rgba(0,0,0,0);}
+
+
+  .todoStyle{
+    margin: 2%;
+    background-color: white;
+    width: 100%;
+    min-height:80px;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .checkStyling{   
+    min-width:80px;
+    min-height: 80px;
+  }
+
+  .titleStyling{
+    width:70%;
+    padding-left: 30px;
+    padding-top: 20px;
+    text-overflow: ellipsis;
+  }
+
+  .dateStyling{
+    width:15%;
+    padding-top: 20px;
+    min-width: 150px;
+    text-align: center;
+  }
+
+  .modifyContainer{
+    display: flex;
+    align-items: center;
+  }
+
+  .editStyling{
+    min-width:70px;
+    min-height: 80px;
+
+  }
+
+  .deleteStyling{
+    min-width:70px;
+    min-height: 80px;
+
+  }
+
   
