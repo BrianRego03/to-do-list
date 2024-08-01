@@ -1,4 +1,5 @@
 import { isToday, isTomorrow } from "date-fns";
+import { completedExport } from ".";
 
 const taskGenerate=(arr,status)=>{
     if(status=='Home'){
@@ -11,12 +12,8 @@ const taskGenerate=(arr,status)=>{
         return arr.filter((task)=>isTomorrow(task.dueDate));
     }
     else if(status=='Completed'){
-        return arr.filter((task)=>{
-            if(task.project==status)
-                return 1;
-            else return 0;
-
-        })
+        
+        return completedExport();
     }
     else {
         return arr.filter((task)=>{

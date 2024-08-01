@@ -224,4 +224,7 @@
     max-height:800px;
     margin-left: 10%;
   }
-  
+
+  .completedAlert{
+    background-color: rgb(200, 197, 197);
+  }

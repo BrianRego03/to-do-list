@@ -25,7 +25,7 @@ let pageStatus="Home";
 
 let projectArray=['gym',"study"];
 
-// let completedArray=[];
+
 
 
 
@@ -101,8 +101,17 @@ completedBtn.addEventListener('click',()=>{
     pageStatus='Completed';
     clearScreen(todoSec);
     displayArray(taskGenerate(taskLibrary,pageStatus));
-    addTaskButton();
-    addButtonActivate(projectArray,taskLibrary);
+    
+    const allButtons = todoSec.getElementsByTagName("button");
+    for (const button of allButtons) {
+      button.disabled = true;
+    }
+    const todoDiv=document.querySelectorAll(".todoStyle");
+    for (let i=0;i<todoDiv.length;i++) {
+        todoDiv[i].classList.add("completedAlert");
+         }
+    
+
 })
 
 
@@ -158,4 +167,14 @@ function libraryImporter(){
     return taskLibrary;
 }
 
-export {libraryUpdater,libraryImporter};
+let completedArray=[];
+function completedStorage(completedTask){
+    completedArray[completedArray.length]=completedTask;
+    console.log(completedArray);
+}
+
+function completedExport(){
+    return completedArray;
+}
+
+export {libraryUpdater,libraryImporter,completedStorage,completedExport};
