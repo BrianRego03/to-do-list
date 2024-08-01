@@ -4,12 +4,13 @@ import { displayArray } from "./displayArray";
 
 import { taskGenerate } from "./taskGenerator";
 
-import { addActivate,libraryImporter } from ".";
+import { addActivate,libraryImporter,projectArrayExporter } from ".";
 
 import { addTaskButton,addButtonActivate } from "./addTaskButton";
 
 
 const projectAddition=(arr,lib)=>{
+    arr=projectArrayExporter();
     const addProjectBtn=document.querySelector("#AddProject");
 
     const addButtonSection=document.querySelector("#projectInput");
@@ -93,6 +94,7 @@ function projectActivate(arr,lib){
             
             displayArray(taskGenerate(lib,currentProject.innerHTML));
             addTaskButton(); 
+            arr=projectArrayExporter();
             addButtonActivate(arr,lib);              
         });
     }
