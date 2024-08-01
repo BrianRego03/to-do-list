@@ -1,11 +1,16 @@
+import { taskSort,indexAssign } from "./taskSorter";
+import { deletionActivate } from "./deletionButton";
+
 const displayArray=(arr)=>{
     let todoSec=document.querySelector(".todoSection");
-    console.dir(todoSec);
+    taskSort(arr);
+    indexAssign(arr);
 
     for(let i=0;i<arr.length;i++){
         let todoSecChild=document.createElement('div');
         todoSec.appendChild(todoSecChild);
         todoSecChild.classList.add("todoStyle");
+        todoSecChild.setAttribute("id",`todos${arr[i].index}`);
         
         let checkButton=document.createElement("button");
         todoSecChild.appendChild(checkButton);
@@ -62,7 +67,8 @@ const displayArray=(arr)=>{
             todoSecChild.classList.add("greenAlert");
 
         }
-    }  
+    } 
+    deletionActivate(arr); 
 
 }
 
