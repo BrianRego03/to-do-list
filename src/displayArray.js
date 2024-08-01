@@ -1,6 +1,7 @@
 import { taskSort,indexAssign } from "./taskSorter";
 import { deletionActivate } from "./deletionButton";
 import { completionActivate } from "./completionActivator";
+import { editActivate } from "./editProcess";
 
 const displayArray=(arr)=>{
     let todoSec=document.querySelector(".todoSection");
@@ -70,6 +71,7 @@ const displayArray=(arr)=>{
         }
     } 
     deletionActivate(arr);
+    editActivate();
     completionActivate(arr); 
 
 }

@@ -177,4 +177,32 @@ function completedExport(){
     return completedArray;
 }
 
-export {libraryUpdater,libraryImporter,completedStorage,completedExport};
+function projectArrayExporter(){
+    return projectArray;
+}
+
+const editTaskCollector=(a,p,b,c,d,identity)=>{
+    let editIndex;
+    editIndex=taskLibrary.findIndex((item)=>{
+        if (item.index==identity)
+            return  1;
+        else return 0;
+
+    })
+   
+    taskLibrary[editIndex].title=a;
+    taskLibrary[editIndex].priority=p;
+    taskLibrary[editIndex].dueDate=format(b,'PP');
+    taskLibrary[editIndex].project=c;
+    taskLibrary[editIndex].description=d;
+    taskSort(taskLibrary);
+    indexAssign(taskLibrary);
+    clearScreen(todoSec);
+    displayArray(taskLibrary);
+    addTaskButton();
+    addButtonActivate(projectArray,taskLibrary);
+
+}
+
+export {libraryUpdater,libraryImporter,completedStorage,completedExport,
+    projectArrayExporter,editTaskCollector};
