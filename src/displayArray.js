@@ -2,6 +2,7 @@ import { taskSort,indexAssign } from "./taskSorter";
 import { deletionActivate } from "./deletionButton";
 import { completionActivate } from "./completionActivator";
 import { editActivate } from "./editProcess";
+import { descriptionActivate } from "./descriptionToggler";
 
 const displayArray=(arr)=>{
     let todoSec=document.querySelector(".todoSection");
@@ -36,6 +37,16 @@ const displayArray=(arr)=>{
         let modifyDiv=document.createElement("div");
         todoSecChild.appendChild(modifyDiv);
         modifyDiv.classList.add("modifyContainer");
+
+        
+        let descriptButton=document.createElement("button");
+        modifyDiv.appendChild(descriptButton);
+        descriptButton.setAttribute("id",`descriptButton${arr[i].index}`);
+        descriptButton.classList.add("descriptStyling");   
+        
+        let descriptSVG=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Description</title><path fill="currentColor" d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12M6,10L12,16L18,10L16.6,8.6L12,13.2L7.4,8.6L6,10Z" /></svg>`
+        descriptButton.innerHTML=descriptSVG;
+
 
         let editButton=document.createElement("button");
         modifyDiv.appendChild(editButton);
@@ -73,6 +84,7 @@ const displayArray=(arr)=>{
     deletionActivate(arr);
     editActivate();
     completionActivate(arr); 
+    descriptionActivate();
 
 }
 

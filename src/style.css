@@ -133,7 +133,7 @@
 
 
   .titleStyling{
-    width:70%;
+    width:60%;
     padding-left: 30px;
     padding-top: 20px;
     text-overflow: ellipsis;
@@ -152,7 +152,7 @@
   }
 
 
-  .deleteStyling,.checkStyling,.editStyling{
+  .deleteStyling,.checkStyling,.editStyling,.descriptStyling{
     min-width:70px;
     min-height: 80px;
     background-color: rgba(0,0,0,0);
@@ -170,6 +170,10 @@
 
   .editStyling:hover{
     color:blue;
+  }
+
+  .descriptStyling:hover{
+    color: rgb(166, 23, 169);
   }
 
   .redAlert{

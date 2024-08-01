@@ -1,4 +1,4 @@
-
+let todoSec=document.querySelector(".todoSection");
 
 const todoButtonEnable=()=>{
     const allButtons = todoSec.getElementsByTagName("button");
