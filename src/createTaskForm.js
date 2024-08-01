@@ -74,6 +74,29 @@ const createForm=(arr,lib)=>{
     actualForm.appendChild(labelDescription);
     actualForm.appendChild(inputDescription);
 
+    let labelPriority=document.createElement("label");
+    labelPriority.setAttribute("for","labelPriority");
+    labelPriority.innerText="Priority:";
+    let inputPriority=document.createElement("select");
+    inputPriority.setAttribute("name",'taskPriority');
+    inputPriority.setAttribute("id",'labelPriority');
+    actualForm.appendChild(labelPriority);
+    actualForm.appendChild(inputPriority);
+
+    let priorityOption1=document.createElement("option");
+    priorityOption1.setAttribute("value",1);
+    priorityOption1.innerText="Low";
+    inputPriority.appendChild(priorityOption1);
+    let priorityOption2=document.createElement("option");
+    priorityOption2.setAttribute("value",2);
+    priorityOption2.innerText="Medium";
+    inputPriority.appendChild(priorityOption2);
+    let priorityOption3=document.createElement("option");
+    priorityOption3.setAttribute("value",3);
+    priorityOption3.innerText="High";
+    inputPriority.appendChild(priorityOption3);
+
+
     let submission=document.createElement("input");
     submission.setAttribute("type","submit");
     submission.setAttribute("value","Add Task");
@@ -114,7 +137,7 @@ const formSubmission=(arr,lib)=>{
 
 formSubmit.addEventListener('submit',function(e){
     e.preventDefault();
-    taskCollector(formSubmit[0].value,formSubmit[1].value,formSubmit[2].value,formSubmit[3].value);
+    taskCollector(formSubmit[0].value,formSubmit[4].value,formSubmit[1].value,formSubmit[2].value,formSubmit[3].value);
    
 
 });

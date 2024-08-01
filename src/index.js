@@ -114,8 +114,8 @@ addActivate(projectArray,taskLibrary);
 export {addActivate}
 
 
-const taskCollector=(a,b,c,d)=>{
-    const Taskz= new Task(a,1,b,c,d,0);
+const taskCollector=(a,p,b,c,d)=>{
+    const Taskz= new Task(a,p,b,c,d,0);
     Taskz.addTaskToLibrary();
     taskSort(taskLibrary);
     indexAssign(taskLibrary);
