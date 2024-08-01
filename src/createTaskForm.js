@@ -44,7 +44,6 @@ const createForm=(arr,lib)=>{
     let inputProject=document.createElement("select");
     inputProject.setAttribute("name",'taskProject');
     inputProject.setAttribute("id",'labelProject');
-    inputProject.setAttribute("required",'');
     actualForm.appendChild(labelProject);
     actualForm.appendChild(inputProject);
 
