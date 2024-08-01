@@ -71,7 +71,6 @@ const createForm=(arr,lib)=>{
     inputDescription.setAttribute("columns",'60');
     inputDescription.setAttribute("name",'taskDescription');
     inputDescription.setAttribute("id",'labelDescription');
-    inputDescription.setAttribute("required",'');
     actualForm.appendChild(labelDescription);
     actualForm.appendChild(inputDescription);
 
