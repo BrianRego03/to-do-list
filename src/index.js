@@ -91,6 +91,15 @@ tomorrowBtn.addEventListener('click',()=>{
     addButtonActivate(projectArray,taskLibrary);
 })
 
+const completedBtn=document.querySelector("#Completed");
+completedBtn.addEventListener('click',()=>{
+    pageStatus='Completed';
+    clearScreen(todoSec);
+    displayArray(taskGenerate(taskLibrary,pageStatus));
+    addTaskButton();
+    addButtonActivate(projectArray,taskLibrary);
+})
+
 
 let projectButtonSection=document.querySelector("#buttonSection2");
 clearScreen(projectButtonSection);
