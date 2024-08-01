@@ -13,13 +13,14 @@ import { clearScreen } from './clearWindow.js';
 
 import { projectAddition,projectDisplay } from './AddProject.js';
 
-import { addTaskButton,removeTaskButton,addButtonActivate } from './addTaskButton.js';
+import { addTaskButton,addButtonActivate } from './addTaskButton.js';
 
-import { createForm,removeForm } from './createTaskForm.js';
+
 
 
 
 let taskLibrary = [];
+
 
 let pageStatus="Home";
 
@@ -46,17 +47,21 @@ class Task{
 
     }
    
+if(localStorage.getItem("TaskItems")===null){
+    const task1=new Task('HIIT workout',2,new Date(2025, 1, 1),'gym','Madfit workout',0);
+
+    const task2=new Task('Linear Algebra',3,new Date(2024, 6, 31),'study','Test tomorrow',1);
+
+    const task3=new Task('Algebra',3,new Date(2025, 1, 1),'study','Test tomorrow',2);
+
+    task1.addTaskToLibrary();
+    task2.addTaskToLibrary();
+    task3.addTaskToLibrary();
+
+}
+else taskLibrary=JSON.parse(localStorage.getItem("TaskItems"));
 
 
-const task1=new Task('HIIT workout',2,new Date(2025, 1, 1),'gym','Madfit workout',0);
-
-const task2=new Task('Linear Algebra',3,new Date(2024, 6, 31),'study','Test tomorrow',1);
-
-const task3=new Task('Algebra',3,new Date(2025, 1, 1),'study','Test tomorrow',2);
-
-task1.addTaskToLibrary();
-task2.addTaskToLibrary();
-task3.addTaskToLibrary();
 
 
 taskSort(taskLibrary);
@@ -140,8 +145,11 @@ export {addActivate}
 const taskCollector=(a,p,b,c,d)=>{
     const Taskz= new Task(a,p,b,c,d,0);
     Taskz.addTaskToLibrary();
+    
     taskSort(taskLibrary);
     indexAssign(taskLibrary);
+
+    localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
     clearScreen(todoSec);
     displayArray(taskLibrary);
     addTaskButton();
@@ -170,7 +178,7 @@ function libraryImporter(){
 let completedArray=[];
 function completedStorage(completedTask){
     completedArray[completedArray.length]=completedTask;
-    console.log(completedArray);
+    
 }
 
 function completedExport(){
@@ -197,6 +205,8 @@ const editTaskCollector=(a,p,b,c,d,identity)=>{
     taskLibrary[editIndex].description=d;
     taskSort(taskLibrary);
     indexAssign(taskLibrary);
+
+    localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
     clearScreen(todoSec);
     displayArray(taskLibrary);
     addTaskButton();
