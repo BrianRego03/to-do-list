@@ -19,11 +19,15 @@ import { createForm,removeForm } from './createTaskForm.js';
 
 
 
-const taskLibrary = [];
+let taskLibrary = [];
 
 let pageStatus="Home";
 
 let projectArray=['gym',"study"];
+
+// let completedArray=[];
+
+
 
 class Task{
     constructor(title,priority,dueDate,project,description,index){
@@ -32,6 +36,7 @@ class Task{
         this.dueDate=format(dueDate,'PP');
         this.project=project;
         this.description=description;
+        this.index=index;
     }
 
     addTaskToLibrary(){
@@ -137,3 +142,19 @@ const taskCollector=(a,p,b,c,d)=>{
 
 export {taskCollector};
 
+// localStorage.setItem("completedArray",  JSON.stringify(taskLibrary));
+// let z =JSON.parse(localStorage.getItem("completedArray"));
+// console.log(z);
+//     displayArray(taskGenerate(taskLibrary,pageStatus));
+
+function libraryUpdater(arr){
+    
+    taskLibrary=arr;
+
+}
+
+function libraryImporter(){
+    return taskLibrary;
+}
+
+export {libraryUpdater,libraryImporter};

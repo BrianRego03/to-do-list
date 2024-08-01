@@ -4,7 +4,7 @@ import { displayArray } from "./displayArray";
 
 import { taskGenerate } from "./taskGenerator";
 
-import { addActivate } from ".";
+import { addActivate,libraryImporter } from ".";
 
 import { addTaskButton,addButtonActivate } from "./addTaskButton";
 
@@ -88,6 +88,8 @@ function projectActivate(arr,lib){
         currentProject.addEventListener('click',()=>{
             
             clearScreen(todoSec);
+
+            arr=libraryImporter();
             
             displayArray(taskGenerate(lib,currentProject.innerHTML));
             addTaskButton(); 
