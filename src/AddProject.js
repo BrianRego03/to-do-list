@@ -85,6 +85,7 @@ const projectDisplay=(arr,lib)=>{
 function projectActivate(arr,lib){
     const projectBtn=document.querySelectorAll(".projectButton");
     let todoSec=document.querySelector(".todoSection");
+    localStorage.setItem('ProjectItems', JSON.stringify(projectArrayExporter()));
     for(let currentProject of projectBtn){
         currentProject.addEventListener('click',()=>{
             
@@ -95,6 +96,7 @@ function projectActivate(arr,lib){
             displayArray(taskGenerate(lib,currentProject.innerHTML));
             addTaskButton(); 
             arr=projectArrayExporter();
+            
             addButtonActivate(arr,lib);              
         });
     }

@@ -26,6 +26,11 @@ let pageStatus="Home";
 
 let projectArray=['gym',"study"];
 
+if(JSON.parse(localStorage.getItem("ProjectItems"))===null){
+    projectArray=['gym',"study"];
+    }
+else {projectArray=JSON.parse(localStorage.getItem("ProjectItems"))} ;  
+
 
 
 
@@ -47,7 +52,7 @@ class Task{
 
     }
 
-console.log(JSON.parse(localStorage.getItem("TaskItems")))   ;
+
 if(JSON.parse(localStorage.getItem("TaskItems"))===null){
     const task1=new Task('HIIT workout',2,new Date(2025, 1, 1),'gym','Madfit workout',0);
 
@@ -60,7 +65,20 @@ if(JSON.parse(localStorage.getItem("TaskItems"))===null){
     task3.addTaskToLibrary();
 
 }
-else taskLibrary=JSON.parse(localStorage.getItem("TaskItems"));
+else if (JSON.parse(localStorage.getItem("TaskItems"))==[]){
+    taskLibrary=[]
+    console.log(JSON.parse(localStorage.getItem("TaskItems")));
+    console.log(JSON.parse(localStorage.getItem("DoneItems")));
+    console.log("no tasks");
+}
+else {
+    taskLibrary=JSON.parse(localStorage.getItem("TaskItems"));
+    console.log(JSON.parse(localStorage.getItem("TaskItems")));
+    console.log(JSON.parse(localStorage.getItem("DoneItems")));
+    console.log("there are tasks");
+
+
+}
 
 
 
@@ -151,6 +169,7 @@ const taskCollector=(a,p,b,c,d)=>{
     indexAssign(taskLibrary);
 
     localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
+
     clearScreen(todoSec);
     displayArray(taskLibrary);
     addTaskButton();
@@ -165,7 +184,10 @@ export {taskCollector};
 function libraryUpdater(arr){
     
     taskLibrary=arr;
+    console.log(taskLibrary);
     localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
+
+    
     projectDisplay(projectArray,taskLibrary);
 
 }
@@ -185,7 +207,7 @@ else {completedArray=JSON.parse(localStorage.getItem("DoneItems"))} ;
 function completedStorage(completedTask){
     completedArray[completedArray.length]=completedTask;
     localStorage.setItem("DoneItems",JSON.stringify(completedArray));
-    
+
     
 }
 
@@ -215,6 +237,8 @@ const editTaskCollector=(a,p,b,c,d,identity)=>{
     indexAssign(taskLibrary);
 
     localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
+
+    
     clearScreen(todoSec);
     displayArray(taskLibrary);
     addTaskButton();

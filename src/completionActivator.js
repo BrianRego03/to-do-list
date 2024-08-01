@@ -1,5 +1,5 @@
 
-import { libraryUpdater,completedStorage } from ".";
+import { libraryUpdater,completedStorage,libraryImporter } from ".";
 
 
 localStorage.setItem("completedArray",JSON.stringify([]));
@@ -7,12 +7,13 @@ localStorage.setItem("completedArray",JSON.stringify([]));
 function completionActivate(lib){
     let completebtn= document.querySelectorAll(".checkStyling");
     let todoSec=document.querySelector(".todoSection");
-
+    
     for(let checker of completebtn){
         checker.addEventListener('click',()=>{
             let childCompletion=document.getElementById(`todos${checker.id.slice(10)}`);
             let counter=checker.id.slice(10);          
             todoSec.removeChild(childCompletion);
+            lib=libraryImporter();
             
             lib=lib.map((tasks)=>{
                 if((tasks.index)==counter){
@@ -25,7 +26,7 @@ function completionActivate(lib){
 
             });
             
-
+         
             lib=lib.filter((task)=>{
                 if((task.index)!=counter){
                     
@@ -34,7 +35,7 @@ function completionActivate(lib){
                 else {
                     return 0;}
             });
-            console.log(lib);
+           
             libraryUpdater(lib);
             
             
