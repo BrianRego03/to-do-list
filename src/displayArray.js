@@ -68,6 +68,13 @@ const displayArray=(arr)=>{
         let deleteSVG=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete Task</title><path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>`;
         deleteButton.innerHTML=deleteSVG;
 
+        let descriptionDiv=document.createElement("div");
+        descriptionDiv.innerText=arr[i].description;
+        todoSecChild.appendChild(descriptionDiv);
+        descriptionDiv.setAttribute("id",`description${arr[i].index}`)
+        descriptionDiv.classList.add("hide");
+
+
         if((arr[i].priority)==3){
             todoSecChild.classList.add("redAlert");
 

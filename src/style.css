@@ -186,6 +186,18 @@
     background: rgb(185, 255, 185);
   }
 
+  .show{
+    display: block;
+    background-color: #5f4d93;
+    width:100%;
+    padding-left: 7%;
+    font-size: 28px;
+    color: aliceblue;
+  }
+  .hide{
+    display: none;
+  }
+
   #addTaskDiv{
     display: flex;
     justify-content: center;
