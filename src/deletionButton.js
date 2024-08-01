@@ -1,4 +1,4 @@
-import { indexAssign } from "./taskSorter";
+import { libraryUpdater } from ".";
 
 
 
@@ -11,9 +11,15 @@ function deletionActivate(lib){
             let childDeletion=document.getElementById(`todos${deletor.id.slice(12)}`);
             console.log(deletor.id.slice(12));
             todoSec.removeChild(childDeletion);
-            lib.splice(`${deletor.id.slice(12)}`,1);
-            indexAssign(lib);
-            
+            let counter= deletor.id.slice(12);
+            lib=lib.filter((task)=>{
+                if((task.index)!=counter){
+                    console.log(task.index);
+                    return 1;
+                }
+                else return 0;
+            });
+            libraryUpdater(lib);
         })
     }
 }

@@ -150,6 +150,7 @@ export {taskCollector};
 function libraryUpdater(arr){
     
     taskLibrary=arr;
+    projectDisplay(projectArray,taskLibrary);
 
 }
 
