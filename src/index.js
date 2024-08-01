@@ -46,8 +46,9 @@ class Task{
 
 
     }
-   
-if(localStorage.getItem("TaskItems")===null){
+
+console.log(JSON.parse(localStorage.getItem("TaskItems")))   ;
+if(JSON.parse(localStorage.getItem("TaskItems"))===null){
     const task1=new Task('HIIT workout',2,new Date(2025, 1, 1),'gym','Madfit workout',0);
 
     const task2=new Task('Linear Algebra',3,new Date(2024, 6, 31),'study','Test tomorrow',1);
@@ -159,14 +160,12 @@ const taskCollector=(a,p,b,c,d)=>{
 
 export {taskCollector};
 
-// localStorage.setItem("completedArray",  JSON.stringify(taskLibrary));
-// let z =JSON.parse(localStorage.getItem("completedArray"));
-// console.log(z);
-//     displayArray(taskGenerate(taskLibrary,pageStatus));
+
 
 function libraryUpdater(arr){
     
     taskLibrary=arr;
+    localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
     projectDisplay(projectArray,taskLibrary);
 
 }
@@ -176,8 +175,17 @@ function libraryImporter(){
 }
 
 let completedArray=[];
+
+if(JSON.parse(localStorage.getItem("DoneItems"))===null){
+    completedArray=[];
+    }
+else {completedArray=JSON.parse(localStorage.getItem("DoneItems"))} ;   
+
+
 function completedStorage(completedTask){
     completedArray[completedArray.length]=completedTask;
+    localStorage.setItem("DoneItems",JSON.stringify(completedArray));
+    
     
 }
 

@@ -36,24 +36,12 @@ function completionActivate(lib){
             });
             console.log(lib);
             libraryUpdater(lib);
-            // let y;
-            // [y]=
             
-
-          
-
-            
-            
-            
-            // let z =JSON.parse(localStorage.getItem("completedArray"));
-            // z[z.length]=y;
-            // localStorage.setItem("completedArray",JSON.stringify(z));
-            // console.log(JSON.parse(localStorage.getItem("completedArray")))
             
         })
     }
 }
 
-// function idAssign()
+
 
 export {completionActivate};
