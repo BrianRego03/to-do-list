@@ -69,11 +69,19 @@
     
     padding-top: 10px; 
     border: 2px solid rgba(0,0,0,0);  
+    display: flex;
+  }
+
+  
+  #headerTitle{
+    /* margin-left: 40%; */
+    width: 90%;
   }
 
   .todoBody{
     min-height: 100%;
     display: flex;
+    position: relative;
   }
 
   nav{
@@ -83,8 +91,12 @@
     font-size: 40px;
     text-align: center;
     border-radius: 20px;
+    display:none; 
+    position: absolute; 
     
-    
+  }
+  .menuAppear{
+    display: block;
   }
   
   .navButtons{
@@ -128,7 +140,7 @@
     height:50px
   }
 
-  .todoSection{width: 80%;
+  .todoSection{width: 95%;
   background-color: rgba(0,0,0,0);}
 
 
@@ -165,7 +177,7 @@
   }
 
 
-  .deleteStyling,.checkStyling,.editStyling,.descriptStyling{
+  .deleteStyling,.checkStyling,.editStyling,.descriptStyling,.burgerStyling{
     min-width:70px;
     min-height: 80px;
     background-color: rgba(0,0,0,0);
@@ -263,13 +275,14 @@
   }
 
   #formDivision{
-    max-width:1000px;
-    min-width: 200px;
-    /* display: flex;
-    justify-content: center; */
+    max-width:100%;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
     margin: 2%;
     max-height:800px;
-    margin-left: 10%;
+    /* margin-left: 10%;
+    margin-right: 10%; */
   }
 
   .completedAlert{

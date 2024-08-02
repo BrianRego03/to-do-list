@@ -89,7 +89,16 @@ displayArray(taskLibrary);
 addTaskButton();
 addButtonActivate(projectArray,taskLibrary);
 
+let burgerBtn=document.querySelector("#burgerButton");
+let navSection=document.querySelector("nav")
+burgerBtn.addEventListener('click',()=>{
+    navSection.classList.toggle("menuAppear");
 
+})
+navSection.addEventListener('click',()=>{
+    navSection.classList.toggle("menuAppear");
+
+})
 
 let todoSec=document.querySelector(".todoSection");
 
