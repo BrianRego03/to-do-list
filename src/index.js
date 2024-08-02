@@ -180,7 +180,7 @@ const taskCollector=(a,p,b,c,d)=>{
     localStorage.setItem('TaskItems', JSON.stringify(taskLibrary));
 
     clearScreen(todoSec);
-    displayArray(taskLibrary);
+    displayArray(taskGenerate(taskLibrary,pageStatus));
     addTaskButton();
     addButtonActivate(projectArray,taskLibrary);
 
@@ -249,7 +249,7 @@ const editTaskCollector=(a,p,b,c,d,identity)=>{
 
     
     clearScreen(todoSec);
-    displayArray(taskLibrary);
+    displayArray(taskGenerate(taskLibrary,pageStatus));
     addTaskButton();
     addButtonActivate(projectArray,taskLibrary);
 
