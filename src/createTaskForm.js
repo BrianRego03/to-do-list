@@ -6,7 +6,7 @@ const createForm=(arr,lib)=>{
     removeTaskButton(arr,lib);
     let todoSec=document.querySelector(".todoSection");
     let formDiv=document.createElement("div");
-    todoSec.appendChild(formDiv);
+    todoSec.insertBefore(formDiv,todoSec.firstChild);
     formDiv.setAttribute("id","formDivision")
     
     let actualForm=document.createElement("form");
