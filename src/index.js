@@ -90,12 +90,18 @@ addTaskButton();
 addButtonActivate(projectArray,taskLibrary);
 
 let burgerBtn=document.querySelector("#burgerButton");
+let navSection1=document.querySelector("#buttonSection1")
+let navSection2=document.querySelector("#buttonSection2")
 let navSection=document.querySelector("nav")
 burgerBtn.addEventListener('click',()=>{
     navSection.classList.toggle("menuAppear");
 
 })
-navSection.addEventListener('click',()=>{
+navSection1.addEventListener('click',()=>{
+    navSection.classList.toggle("menuAppear");
+
+})
+navSection2.addEventListener('click',()=>{
     navSection.classList.toggle("menuAppear");
 
 })
